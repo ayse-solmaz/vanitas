@@ -1,0 +1,16 @@
+{
+  "name": "vanitas",
+  "version": "1.0.0",
+  "description": "Çoklu proje takip ve ajan destekli güncelleme uygulaması",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.3",
+    "node-fetch": "^3.3.2",
+    "sqlite3": "^6.0.1"
+  },
+  "type": "module"
+}

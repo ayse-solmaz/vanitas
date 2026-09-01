@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanitas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Vanitas</h1>
+      <div id="agent-status" class="agent-status offline">Ajansız mod</div>
+    </header>
+
+    <section id="reminders" class="reminders hidden">
+      <h2>⚠ Durgun Projeler (7+ gün)</h2>
+      <div id="reminder-list"></div>
+    </section>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="aktif">Aktif Projeler</button>
+      <button class="tab-btn" data-tab="arastirma">Kaynaklar (Araştırma)</button>
+      <button class="tab-btn" data-tab="arsiv">Arşiv</button>
+      <button class="tab-btn" data-tab="beklemede">Beklemede</button>
+      <button class="tab-btn" data-tab="fikir">Fikirler</button>
+    </div>
+
+    <div id="projects-container">
+      <div id="tab-aktif" class="tab-panel active"></div>
+      <div id="tab-arastirma" class="tab-panel"></div>
+      <div id="tab-arsiv" class="tab-panel"></div>
+      <div id="tab-beklemede" class="tab-panel"></div>
+      <div id="tab-fikir" class="tab-panel"></div>
+    </div>
+
+    <button id="add-project-btn" class="btn-primary">+ Yeni Proje</button>
+
+    <section id="chat-section">
+      <h2>💬 Proje Asistanı</h2>
+      <div id="chat-messages"></div>
+      <div class="chat-input">
+        <input type="text" id="chat-input" placeholder="Örn: 'Vanitas projesinde veritabanı bitirildi, arayüz sırada'" />
+        <button id="chat-send">Gönder</button>
+      </div>
+    </section>
+  </div>
+
+  <dialog id="project-modal">
+    <form method="dialog" id="project-form">
+      <h3 id="modal-title">Yeni Proje</h3>
+      <input type="hidden" id="project-id">
+      <div class="form-group">
+        <label>Başlık</label>
+        <input type="text" id="project-title" required>
+      </div>
+      <div class="form-group">
+        <label>Kategori</label>
+        <select id="project-category" required>
+          <option value="egitim">Eğitim</option>
+          <option value="kisisel">Kişisel</option>
+          <option value="arastirma">Araştırma</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Durum</label>
+        <select id="project-status" required>
+          <option value="aktif">Aktif</option>
+          <option value="beklemede">Beklemede</option>
+          <option value="fikir">Fikir</option>
+          <option value="arsiv">Arşiv</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Notlar</label>
+        <textarea id="project-notes" rows="4"></textarea>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="modal-cancel">İptal</button>
+        <button type="submit" class="btn-primary">Kaydet</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
